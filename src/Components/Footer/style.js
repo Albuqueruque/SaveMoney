@@ -4,7 +4,7 @@ export const FooterContainer = styled.div`
     height: 3.188rem;
     position: fixed;
     width: 100%;
-    background: #d2effa;
+    background: #86939e;
     display: flex;
     z-index: 9999;
     bottom: 0;
