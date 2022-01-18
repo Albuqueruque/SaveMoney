@@ -6,7 +6,6 @@ import {Home} from "../Pages/Home/index"
 
 const PrivateRoutes = ({ component: Component, ...rest }) => {
   var session_token = localStorage.getItem("token");
-  return  "Alo"
 };
 
 export const Routing  = () => {
@@ -14,8 +13,7 @@ export const Routing  = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" exact={true} component={Home} />
-          {/* <Footer /> */}
+          <Route path="/" element={<Home/>} />
         </Routes>
       </BrowserRouter>
     </>
