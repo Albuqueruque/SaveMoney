@@ -15,9 +15,11 @@ import {
   ContainerGasto,
   ContainerPage,
   ContainerGanhos,
+  HeaderCard,
+  InputSearch,
+  ContainerList,
 } from "./style";
 
-import AddNew from "../../Assets/Images/add-new.png";
 import Remove from "../../Assets/Images/remove.png";
 
 export const Card = () => {
@@ -51,7 +53,7 @@ export const Card = () => {
   const removeCardGasto = (e, i) => {
     console.log("Removendo card");
     e.preventDefault();
-    if (cardFieldsGastoList.length > 1) {
+    if (cardFieldsGastoList.length > 0) {
       let list = cardFieldsGastoList;
       list.splice(i, 1);
       setCardFieldsGastoList(list);
@@ -61,7 +63,7 @@ export const Card = () => {
 
   const addCardGanho = (e) => {
     console.log("Adicionando card");
-    console.log("CardFields:", cardFieldsGanhos);
+    console.log("Ganhos:", cardFieldsGanhos);
     e.preventDefault();
     if (cardFieldsGanhosList.length < 10) {
       let list = cardFieldsGanhosList;
@@ -74,7 +76,7 @@ export const Card = () => {
   const removeCardGanho = (e, i) => {
     console.log("Removendo card");
     e.preventDefault();
-    if (cardFieldsGanhosList.length > 1) {
+    if (cardFieldsGanhosList.length > 0) {
       let list = cardFieldsGanhosList;
       list.splice(i, 1);
       setCardFieldsGanhosList(list);
@@ -86,19 +88,21 @@ export const Card = () => {
     <Container>
       <ContainerPage>
         <ContainerGasto>
-          <ContainerButton>
-            <ButtonInital onClick={(e) => addCardGasto(e)}>
-              Adicionar gastos
-            </ButtonInital>
-          </ContainerButton>
+          <HeaderCard>
+            <ContainerButton>
+              <InputSearch placeholder="Pesquise seus gastos" />
+            </ContainerButton>
+            <ContainerButton>
+              <ButtonInital onClick={(e) => addCardGasto(e)}>
+                Adicionar gastos
+              </ButtonInital>
+            </ContainerButton>
+          </HeaderCard>
           {cardFieldsGastoList.map((object, i) => {
             return (
               <TheCard>
                 <ContainerCard key={i}>
                   <ContainerAddRemove>
-                    <Button>
-                      <IconCard src={AddNew} onClick={(e) => addCardGasto(e)} />
-                    </Button>
                     <Button>
                       <IconCard
                         src={Remove}
@@ -124,22 +128,35 @@ export const Card = () => {
               </TheCard>
             );
           })}
+           <ContainerList>
+            <FieldType>Com o que foi o gasto?</FieldType>
+            <FieldType>Com o que foi o gasto?</FieldType>
+            <FieldType>Com o que foi o gasto?</FieldType>
+            <FieldType>Com o que foi o gasto?</FieldType>
+          </ContainerList>
         </ContainerGasto>
 
         <ContainerGanhos>
-          <ContainerButton>
-            <ButtonInital onClick={(e) => addCardGanho(e)} primary>Adicionar ganhos</ButtonInital>
-          </ContainerButton>
+          <HeaderCard>
+            <ContainerButton>
+              <InputSearch placeholder="Pesquise seus ganhos" />
+            </ContainerButton>
+            <ContainerButton>
+              <ButtonInital onClick={(e) => addCardGanho(e)} primary>
+                Adicionar ganhos
+              </ButtonInital>
+            </ContainerButton>
+          </HeaderCard>
           {cardFieldsGanhosList.map((object, i) => {
             return (
               <TheCard>
                 <ContainerCard key={i}>
                   <ContainerAddRemove>
                     <Button>
-                      <IconCard src={AddNew} onClick={(e) => addCardGanho(e)} />
-                    </Button>
-                    <Button>
-                      <IconCard src={Remove} onClick={(e) => removeCardGanho(e)} />
+                      <IconCard
+                        src={Remove}
+                        onClick={(e) => removeCardGanho(e)}
+                      />
                     </Button>
                   </ContainerAddRemove>
                   <Inside>
@@ -156,6 +173,12 @@ export const Card = () => {
               </TheCard>
             );
           })}
+          <ContainerList>
+            <FieldType>Qual foi o valor?</FieldType>
+            <FieldType>Qual foi o valor?</FieldType>
+            <FieldType>Qual foi o valor?</FieldType>
+            <FieldType>Qual foi o valor?</FieldType>
+          </ContainerList>
         </ContainerGanhos>
       </ContainerPage>
     </Container>

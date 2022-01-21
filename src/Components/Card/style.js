@@ -11,7 +11,6 @@ export const Container = styled.div`
   align-items: center;
   border-radius: 0.2rem;
   margin: 10% auto auto auto;
-  background: lemonchiffon;
 `;
 
 export const ContainerPage = styled.div`
@@ -19,8 +18,13 @@ export const ContainerPage = styled.div`
   flex: 1;
   flex-direction: row;
   width: 100%;
-  background: dimgray;
 `;
+
+export const HeaderCard = styled.div`
+  display: flex;
+  flex:1;
+  flex-direction: row;
+`
 
 export const ContainerGasto = styled.div`
   width: 50%;
@@ -28,8 +32,10 @@ export const ContainerGasto = styled.div`
   align-items: center;
   align-self: flex-start;
   flex-direction: column;
-  background: darkgreen;
+  background: gold;
 `;
+
+
 
 export const ContainerGanhos = styled.div`
   width: 100%;
@@ -38,7 +44,7 @@ export const ContainerGanhos = styled.div`
   align-items: center;
   align-self: flex-start;
   flex-direction: column;
-  background: chocolate;
+  background: hotpink;
 `;
 
 export const TheCard = styled.div`
@@ -51,7 +57,7 @@ export const TheCard = styled.div`
   justify-content: space-between;
   font-family: "Poppins", sans-serif;
   margin: 0% 5% 5% 5%;
-  background: lightcyan;
+  
 `;
 
 export const ContainerCard = styled.div`
@@ -68,7 +74,7 @@ export const ContainerCard = styled.div`
   -ms-user-select: none;
   user-select: none;
   margin-bottom: 2rem;
-  background: hotpink;
+  background:  #d2effa;
 `;
 
 export const ContainerAddRemove = styled.div`
@@ -80,12 +86,11 @@ export const ContainerAddRemove = styled.div`
   justify-content: flex-end;
   position: relative;
   margin-top: 0.2rem;
-  /* background: orange; */
 `;
 
 export const Button = styled.span`
   &:hover {
-    opacity: 0.65;
+    opacity: 0.45;
   }
 `;
 
@@ -94,7 +99,6 @@ export const IconCard = styled.img`
 `;
 
 export const ContainerButton = styled.div`
-  margin-left: 72%;
   margin-top: 2%;
   display: flex;
   justify-content: center;
@@ -122,7 +126,9 @@ export const Inside = styled.div`
   justify-content: space-between;
   font-family: "Poppins", sans-serif;
   font-size: 1.125rem;
-  background: mediumblue;
+  border: 0.0625rem solid #707070;
+  border-radius: 0.625rem;
+  background: #387bff;
 `;
 
 export const ContainerInside = styled.span`
@@ -148,6 +154,40 @@ export const InputType = styled.input`
   font-size: 14px;
   padding: 10px;
   margin: 5px;
-  border: none;
+  border: 0.04rem inset  #707070;
   border-radius: 3px;
 `;
+
+
+
+export const InputSearch = styled.input`
+  font-size: 1rem;
+  margin: 1rem;
+  padding: 0.25em 1em;
+  border: 2px solid;
+  border-radius: 3px;
+  font-family: "Poppins";
+  ::placeholder {
+       color: #86939e;
+       opacity: 0.65;
+   }
+`;
+
+export const ContainerList = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  border: 0.0625rem ;
+  border-radius: 0.625rem;
+  padding: 0rem 1.5rem 1.5rem 1.5rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 2rem;
+  justify-content: flex-start;
+  background: firebrick;
+  
+`
