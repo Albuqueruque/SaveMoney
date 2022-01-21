@@ -20,6 +20,7 @@ export const ContainerPage = styled.div`
   flex: 1;
   flex-direction: row;
   width: 90%;
+  background: #d2effa;
 `;
 
 export const HeaderCard = styled.div`
@@ -31,6 +32,7 @@ export const HeaderCard = styled.div`
 export const ContainerGasto = styled.div`
   width: 50%;
   display: flex;
+  flex: 1;
   align-items: center;
   align-self: flex-start;
   flex-direction: column;
@@ -104,7 +106,22 @@ export const ContainerCard = styled.div`
   -ms-user-select: none;
   user-select: none;
   margin-bottom: 2rem;
-  background:  #d2effa;
+  background:  #99e3ff;
+`;
+
+export const Inside = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.125rem;
+  border: 0.0625rem solid #707070;
+  border-radius: 0.625rem;
+  background: #2c92e6;
 `;
 
 export const ContainerAddRemove = styled.div`
@@ -144,21 +161,6 @@ export const ButtonInital = styled.button`
   border: 2px solid;
   border-radius: 3px;
   font-family: "Poppins";
-`;
-
-export const Inside = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.125rem;
-  border: 0.0625rem solid #707070;
-  border-radius: 0.625rem;
-  background: #387bff;
 `;
 
 export const ContainerInside = styled.span`
@@ -218,5 +220,5 @@ export const ContainerList = styled.div`
   user-select: none;
   margin-bottom: 2rem;
   justify-content: flex-start;
-  background: #387bff;
+  background: #2c92e6;
 `
