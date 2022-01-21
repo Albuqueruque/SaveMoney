@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import styled,{keyframes} from "styled-components";
+
+
 
 export const Container = styled.div`
   position: relative;
@@ -47,6 +49,26 @@ export const ContainerGanhos = styled.div`
   /* background: hotpink; */
 `;
 
+const cardAnimationEnter =keyframes`
+  from{
+    opacity: 0.1;
+  };
+  to{
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+  };
+`
+
+const cardAnimationLeave =keyframes`
+  from{
+    opacity: 1;
+  };
+  to{
+    opacity: 0.1;
+    transition: opacity 300ms ease-in;
+  };
+`
+
 export const TheCard = styled.div`
   width: 90%;
   height: 100%;
@@ -57,7 +79,7 @@ export const TheCard = styled.div`
   justify-content: space-between;
   font-family: "Poppins", sans-serif;
   margin: 0% 5% 5% 5%;
-  
+  animation: ${cardAnimationEnter} 0.5s, ${cardAnimationLeave} 0.5;
 `;
 
 export const ContainerCard = styled.div`
