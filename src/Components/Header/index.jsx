@@ -10,10 +10,6 @@ export const Header  = ()=> {
                 <LogoContainer>
                     <Logo  src={MoneySave}/>
                 </LogoContainer>
-                <ContainerButton>
-                    <Button>Adicionar gastos</Button>
-                    <Button primary>Adicionar ganhos</Button>
-                </ContainerButton>
             </BottomBox>
         </ContainerHeader>
     )
