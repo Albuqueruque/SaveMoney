@@ -19,7 +19,7 @@ export const ContainerPage = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
 `;
 
 export const HeaderCard = styled.div`
