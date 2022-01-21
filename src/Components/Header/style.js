@@ -4,7 +4,7 @@ export const ContainerHeader = styled.div`
   height: 10rem;
   position: fixed;
   width: 100%;
-  background: #d2effa;
+  background: #8accff;
   box-shadow: 0 0.3rem 0.5rem #00000029;
   z-index: 9999;
   opacity: 1;

@@ -4,7 +4,7 @@ export const FooterContainer = styled.div`
     height: 3.188rem;
     position: fixed;
     width: 100%;
-    background: #86939e;
+    background: #06497d;
     display: flex;
     z-index: 9999;
     bottom: 0;
@@ -15,4 +15,5 @@ export const CopyRight = styled.div`
     font-family: Poppins;
     font-size: 0.80rem;
     margin-left: 10%;
+    color: white;
 `

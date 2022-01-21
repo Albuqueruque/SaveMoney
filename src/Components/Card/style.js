@@ -32,7 +32,7 @@ export const ContainerGasto = styled.div`
   align-items: center;
   align-self: flex-start;
   flex-direction: column;
-  background: gold;
+  /* background: gold; */
 `;
 
 
@@ -44,7 +44,7 @@ export const ContainerGanhos = styled.div`
   align-items: center;
   align-self: flex-start;
   flex-direction: column;
-  background: hotpink;
+  /* background: hotpink; */
 `;
 
 export const TheCard = styled.div`
@@ -188,6 +188,6 @@ export const ContainerList = styled.div`
   user-select: none;
   margin-bottom: 2rem;
   justify-content: flex-start;
-  background: firebrick;
+  background: #387bff;
   
 `
