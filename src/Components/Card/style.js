@@ -49,23 +49,31 @@ export const ContainerGanhos = styled.div`
   /* background: hotpink; */
 `;
 
-const cardAnimationEnter =keyframes`
+const AnimationEnter = keyframes`
   from{
     opacity: 0.1;
+    transform : scale(0.85);
+    transform: translateY(-2.5em);
   };
   to{
     opacity: 1;
+    transform : scale(1); 
+    transform: translateY(0em);
     transition: opacity 300ms ease-in;
   };
 `
 
-const cardAnimationLeave =keyframes`
+const cardAnimationLeave = keyframes`
   from{
     opacity: 1;
+    transform : scale(1); 
+    transform: translateY(0em);
+    transition: opacity 300ms ease-in;
   };
   to{
     opacity: 0.1;
-    transition: opacity 300ms ease-in;
+    transform : scale(0.45);
+    transform: translateY(-3em);
   };
 `
 
@@ -79,7 +87,7 @@ export const TheCard = styled.div`
   justify-content: space-between;
   font-family: "Poppins", sans-serif;
   margin: 0% 5% 5% 5%;
-  animation: ${cardAnimationEnter} 0.5s, ${cardAnimationLeave} 0.5;
+  animation: ${AnimationEnter} 0.5s;
 `;
 
 export const ContainerCard = styled.div`
@@ -211,5 +219,4 @@ export const ContainerList = styled.div`
   margin-bottom: 2rem;
   justify-content: flex-start;
   background: #387bff;
-  
 `
