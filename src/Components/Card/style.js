@@ -63,7 +63,7 @@ const AnimationEnter = keyframes`
   };
 `
 
-const cardAnimationLeave = keyframes`
+const AnimationLeave = keyframes`
   from{
     opacity: 1;
     transform : scale(1); 
