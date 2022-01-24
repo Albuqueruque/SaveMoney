@@ -136,6 +136,22 @@ export const ContainerAddRemove = styled.div`
 `;
 
 export const Button = styled.span`
+
+  &:hover {
+    opacity: 0.45;
+    cursor: pointer;
+
+  }
+`;
+
+
+export const ButtonSave = styled.button`
+  font-size: 1rem;
+  margin: 1rem;
+  padding: 0.25em 1em;
+  border: 2px solid;
+  border-radius: 3px;
+  font-family: "Poppins";
   &:hover {
     opacity: 0.45;
   }

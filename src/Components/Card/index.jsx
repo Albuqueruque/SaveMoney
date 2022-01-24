@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   TheCard,
@@ -18,6 +18,7 @@ import {
   HeaderCard,
   InputSearch,
   ContainerList,
+  ButtonSave
 } from "./style";
 
 import Remove from "../../Assets/Images/remove.png";
@@ -26,21 +27,26 @@ export const Card = () => {
   const [reload, setReload] = useState(true);
 
   const [cardFieldsGanhosList, setCardFieldsGanhosList] = useState([]);
-  const [cardFieldsGanhos, setCardFieldsGanhos] = useState({
+  const [cardFieldsGanhos, setCardFieldsGanhos] = useState([{
     valorRecebido: "",
     origemRecebido: "",
-  });
+  }]);
 
   const [cardFieldsGastoList, setCardFieldsGastoList] = useState([]);
-  const [cardFieldsGasto, setCardFieldsGasto] = useState({
-    itemComprado: "",
-    precoItem: "",
-    tipoItem: "",
-  });
+  const [cardFieldsGasto, setCardFieldsGasto] = useState([{}]);
+
+  async function handleChange(){
+
+    await cardFieldsGasto.push({
+      itemComprado:  "Camisa Lacoste",
+      precoItem: "250",
+      tipoItem: "Roupa"
+    })
+    console.log("cardFieldsGasto:", cardFieldsGasto.length);
+    console.log("cardFieldsGastoList:", cardFieldsGastoList.length);
+  }
 
   const addCardGasto = (e) => {
-    console.log("Adicionando card");
-    console.log("CardFields:", cardFieldsGasto);
     e.preventDefault();
     if (cardFieldsGastoList.length < 10) {
       let list = cardFieldsGastoList;
@@ -51,7 +57,6 @@ export const Card = () => {
   };
 
   const removeCardGasto = (e, i) => {
-    console.log("Removendo card");
     e.preventDefault();
     if (cardFieldsGastoList.length > 0) {
       let list = cardFieldsGastoList;
@@ -62,8 +67,6 @@ export const Card = () => {
   };
 
   const addCardGanho = (e) => {
-    console.log("Adicionando card");
-    console.log("Ganhos:", cardFieldsGanhos);
     e.preventDefault();
     if (cardFieldsGanhosList.length < 10) {
       let list = cardFieldsGanhosList;
@@ -83,6 +86,10 @@ export const Card = () => {
       setReload(!reload);
     }
   };
+
+  console.log("cardFieldsGasto:", cardFieldsGasto.length);
+  console.log("cardFieldsGastoList:", cardFieldsGastoList.length);
+
 
   return (
     <Container>
@@ -113,27 +120,36 @@ export const Card = () => {
                   <Inside>
                     <ContainerInside>
                       <FieldType>Com o que foi o gasto?</FieldType>
-                      <InputType />
+                      <InputType name="intemComprado" value={cardFieldsGasto.intemComprado}/>
                     </ContainerInside>
                     <ContainerInside>
                       <FieldType>Quanto lhe custou?</FieldType>
-                      <InputType />
+                      <InputType name="precoItem" value={cardFieldsGasto.precoItem}/>
                     </ContainerInside>
                     <ContainerInside>
                       <FieldType>Qual foi o tipo do gasto?</FieldType>
-                      <InputType />
+                      <InputType name="tipoItem"  value={cardFieldsGasto.tipoItem}/>
                     </ContainerInside>
                   </Inside>
                 </ContainerCard>
+                <ContainerAddRemove>
+                  <ButtonSave onClick={() => handleChange()}>
+                     Salvar
+                  </ButtonSave>
+                </ContainerAddRemove>
               </TheCard>
             );
           })}
+          { cardFieldsGasto.length > 1 ?
            <ContainerList>
-            <FieldType>Com o que foi o gasto?</FieldType>
-            <FieldType>Com o que foi o gasto?</FieldType>
-            <FieldType>Com o que foi o gasto?</FieldType>
-            <FieldType>Com o que foi o gasto?</FieldType>
+             {cardFieldsGasto.map((i) =>{
+               return(
+              <FieldType key={i}>{i.itemComprado} R${i.precoItem} {i.tipoItem}</FieldType>
+              )
+             })
+             }   
           </ContainerList>
+            : null}
         </ContainerGasto>
 
         <ContainerGanhos>
@@ -169,7 +185,13 @@ export const Card = () => {
                       <InputType />
                     </ContainerInside>
                   </Inside>
+                
                 </ContainerCard>
+                <ContainerAddRemove>
+                  <ButtonSave>
+                     Salvar
+                  </ButtonSave>
+                </ContainerAddRemove>
               </TheCard>
             );
           })}
